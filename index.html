@@ -3,36 +3,32 @@
 <head>
     <title>Getting Giphy</title>
     <meta charset = "UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 <body>
-<div id = "buttons">
-</div>
-<div id = "giphs"></div>
+   <div id = "buttons"></div>
+   <br>
+   <div class = "row">
+        
+        <div class = "col-8" id = "giphs">
+            
+        </div>
+
+        <div class = "col-4">
+          <form onsubmit="addnewplayer();return false">
+          <input id = "newname" type="text" name="FirstName">
+          <button id = "newbutton" type = "submit" value = "Submit" >Add new player</button>
+          </form>
+        </div>
+   </div>
+
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type = "text/javascript">
-var a = "dwarf";
-var players = ["Lance+Stephenson", "Ron Artest","Tim Duncan", "Shaquille O'Neal", "Glen Davis", "Michael Jordan", "Stephen Curry"];
-console.log("cewf");
-window.onload = function() {
-    console.log("sfwefwefw");
-    
-    for (var i = 0; i < players.length; i++) {
-        $("#buttons").append("<button type = 'button' value = '" + players[i] + "' onclick='getgiph("+'value'+")'>" + players[i] + "</button");
-
-    }
-
-}
-function getgiph(p){
-    var player = p;
-    console.log(p);
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+player+"&api_key=FqAts90Kyz891zZQvqDhD77F613BMXMN&limit=5";
-    $.ajax({url: queryURL, method:'GET'}).done(function(response){
-        for (var i = 0; i < response.data.length; i++){
-        var imgURL = response.data[i].images.downsized.url;
-        $("#giphs").prepend("<img src = '" + imgURL + "'>");}
-    })
-
-}
-</script>
+<script type = "text/javascript" src ="gif.js"></script>
+<style>
+        .btn {
+          margin-left: 5px;
+          margin-top: 5px;
+        }
+    </style>
 </html>
