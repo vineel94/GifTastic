@@ -13,7 +13,7 @@ window.onload = function displaybuttons() {
 function getgiph(p){
     var player = p;
     altimages = [];
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+player+"&api_key=FqAts90Kyz891zZQvqDhD77F613BMXMN&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+player+"&api_key=FqAts90Kyz891zZQvqDhD77F613BMXMN&limit=10";
    
     var div = document.getElementById('giphs');
     while(div.firstChild){
